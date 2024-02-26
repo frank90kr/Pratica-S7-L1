@@ -31,12 +31,27 @@ const lname = document.getElementById("lname");
 const species = document.getElementById("species");
 const breed = document.getElementById("breed");
 
+const div = document.getElementsByClassName("animali")[0]; //selezioniamo il div animali
+
+function crea(variabile) {
+  const p = document.createElement("p");
+  div.appendChild(p);
+  p.textContent = variabile;
+}
+
 class Animal {
   constructor(name, proprietario, specie, razza) {
     this.name = name;
     this.proprietario = proprietario;
     this.specie = specie;
     this.razza = razza;
+  }
+  static stessopadrone(animale1, animale2) {
+    if (animale1 && animale2) {
+      if (animale1.proprietario === animale2.proprietario) {
+        console.log("gli animali hanno lo stesso padrone");
+      }
+    }
   }
 }
 
@@ -53,5 +68,18 @@ formNode.onsubmit = function (e) {
   lname.value = "";
   species.value = "";
   breed.value = "";
+
+  crea(
+    " nome " +
+      animale.nome +
+      " proprietario " +
+      animale.proprietario +
+      " specie " +
+      animale.specie +
+      " razza " +
+      animale.razza
+  );
+
+  Animal.stessopadrone(animali[0], animali[1]);
   console.log(animali);
 };
