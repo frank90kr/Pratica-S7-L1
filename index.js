@@ -40,8 +40,8 @@ function crea(variabile) {
 }
 
 class Animal {
-  constructor(name, proprietario, specie, razza) {
-    this.name = name;
+  constructor(nome, proprietario, specie, razza) {
+    this.nome = nome;
     this.proprietario = proprietario;
     this.specie = specie;
     this.razza = razza;
